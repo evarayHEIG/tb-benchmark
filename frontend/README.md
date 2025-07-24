@@ -35,6 +35,13 @@ To build the project for production, which compiles and minifies the code, run:
 npm run build
 ```
 
+## Components
+
+Components are organized into different folders based on their functionality. The main components include:
+- **pages**: Contains the main pages of the application, such as the home page and results page.
+- **parm_selection**: Contains components for selecting parameters for the benchmark, such as query type and database size.
+- **results**: Contains components for displaying the results of the benchmark, including statistics and execution plans.
+
 ## Features 
 
 ### Select how you want to configure the benchmark
