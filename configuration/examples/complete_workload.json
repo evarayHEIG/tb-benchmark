@@ -2,7 +2,7 @@
   "selectedWorkload": "COMPLETE",
   "numberOfExecutions": 2,
   "selectedDatabases": [
-    "POSTGRESQL", "POSTGRESQL_JSONB"
+    "POSTGRESQL", "POSTGRESQL_JSONB", "COUCHBASE"
   ],
   "selectedSize": "LARGE"
 }
