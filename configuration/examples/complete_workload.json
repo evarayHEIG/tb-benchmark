@@ -1,0 +1,8 @@
+{
+  "selectedWorkload": "COMPLETE",
+  "numberOfExecutions": 2,
+  "selectedDatabases": [
+    "POSTGRESQL", "POSTGRESQL_JSONB"
+  ],
+  "selectedSize": "LARGE"
+}

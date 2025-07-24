@@ -1,0 +1,3 @@
+# SSH password example configuration file
+# Replace 'password_example' with your actual SSH password
+ssh.password=password_example

@@ -1,0 +1,27 @@
+{
+  "customWorkloadQueries" : [
+		{
+			"type" : "NEST",
+			"ratio" : 0.5
+		},
+		{
+			"type" : "UNNEST",
+			"ratio" : 0.5
+		}		
+	],
+	"selectedSize" : "LARGE",
+  "numberOfExecutions": 10,
+  "selectedDatabases": [
+    "POSTGRESQL", "POSTGRESQL_JSONB"
+  ],
+	"indexes": {
+		"POSTGRESQL" : [
+			{
+				"table" : "business_categories",
+				"fields" : ["category"],
+				"name" : "idx_business_cat",
+				"type" : "BTREE"
+			}
+		]
+	}
+}

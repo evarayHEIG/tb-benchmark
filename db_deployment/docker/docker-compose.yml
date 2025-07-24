@@ -1,0 +1,86 @@
+# docker-compose.yml
+services:
+  postgres_jsonb:
+    build: ./custom-postgres 
+    container_name: postgres_jsonb
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata_jsonb:/var/lib/postgresql/data
+      - ../data/yelp_jsonb_csv:/var/lib/postgresql/imports
+    deploy:
+      resources:
+        limits:
+          cpus: '8'
+          memory: 25G
+        reservations:
+          memory: 10G
+      
+  postgres:
+    build: ./custom-postgres
+    container_name: postgres_rel
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5433:5432
+    volumes:
+      - pgdata_rel:/var/lib/postgresql/data
+      - ../data/yelp_rel_csv:/var/lib/postgresql/imports
+    deploy:
+      resources:
+        limits:
+          cpus: '8'
+          memory: 25G
+        reservations:
+          memory: 10G
+
+  couchbase:
+    image: couchbase:enterprise-7.6.6
+    container_name: couchbase
+    restart: always
+    ports:
+      - 8091:8091
+      - 8092:8092
+      - 8093:8093
+      - 8094:8094
+      - 8095:8095
+      - 8096:8096
+      - 8097:8097
+      - 9102:9102
+      - 9123:9123
+      - 11207:11207
+      - 11210:11210
+      - 11280:11280
+      - 18091:18091
+      - 18092:18092
+      - 18093:18093
+      - 18094:18094
+      - 18095:18095
+      - 18096:18096
+      - 18097:18097
+    environment:
+      - COUCHBASE_ADMINISTRATOR_USERNAME=Administrator
+      - COUCHBASE_ADMINISTRATOR_PASSWORD=password
+      - COUCHBASE_SERVICES=kv,n1ql,index
+    volumes:
+      - couchbase_data:/opt/couchbase/var
+    deploy:
+      resources:
+        limits:
+          cpus: '8'
+          memory: 25G
+        reservations:
+          memory: 10G
+
+volumes:
+  pgdata_jsonb:
+  pgdata_rel:
+  couchbase_data:

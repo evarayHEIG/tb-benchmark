@@ -1,0 +1,11 @@
+{
+  "numberOfExecutions": 5,
+  "selectedDatabases": [
+    "COUCHBASE", "POSTGRESQL"
+  ],
+  "selectedSize": "MEDIUM",
+	"customQueries": {
+		"COUCHBASE" : "SELECT * FROM business WHERE city = \"New York\" LIMIT 10",
+		"POSTGRESQL" : "SELECT * FROM business WHERE city = 'New York' LIMIT 10"
+	}
+}

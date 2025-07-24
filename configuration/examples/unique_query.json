@@ -1,0 +1,26 @@
+{
+  "selectedQuery": "FILTER",
+  "numberOfExecutions": 1,
+  "selectedDatabases": [
+    "COUCHBASE", "POSTGRESQL", "POSTGRESQL_JSONB"
+  ],
+  "selectedSize": "LARGE",
+	"indexes": {
+		"POSTGRESQL" : [
+			{
+				"table" : "business",
+				"fields" : ["city"],
+				"name" : "test2",
+				"type" : "BTREE"
+			}
+		],
+		"POSTGRESQL_JSONB" : [
+			{
+				"table" : "business",
+				"fields" : ["city"],
+				"name" : "test2",
+				"type" : "BTREE"
+			}
+		]
+	}
+}
