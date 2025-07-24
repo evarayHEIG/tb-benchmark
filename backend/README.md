@@ -72,6 +72,18 @@ These endpoints prevent hardcoding options in the frontend, ensuring that the di
 
 A final endpoint, **`/generate-report`**, accepts POST requests containing benchmark results (in JSON format) to generate an HTML report with charts and tables. This feature relies on a Python script invoked by the backend.
 
+## Modules 
+
+The backend is structured into several packages:
+- **`database`**: Contains classes for managing database connections and executing queries.
+- **`http`**: Manages HTTP requests and responses.
+- **`model`**: Defines data models used in the application.
+- **`service`**: Contains business logic and service classes.
+- **`controller`**: Manages HTTP requests and responses.
+- **`parser`**: Handles parsing of JSON files, such as explanation plans and statistics information.
+- **`ssh`**: Manages SSH connections to the HEIG-VD virtual machine.
+
+
 ## Troubleshooting
 
 - If you encounter the error `Error during ssh tunnel creation: Session.connect: java.io.IOException: End of IO Stream Read`, just restart the backend, it will work. This error can occur if the SSH tunnel to the virtual machine is not established correctly, and restarting the backend will attempt to create the tunnel again.
